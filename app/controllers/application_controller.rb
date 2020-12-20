@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
 
   def basic_auth
     authenticate_or_request_with_http_basic do |username, password|
-      username == EMV["BASIC_AUTH_USER"] && password == EMV["BASIC_AUTH_PASSWORD"]
+      username == ENV["BASIC_AUTH_USER"] && password == ENV["BASIC_AUTH_PASSWORD"]
     end
   end
 end
